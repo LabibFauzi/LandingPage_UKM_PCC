@@ -6,8 +6,8 @@
 :root {
   font-family: var(--font-jetbrains-mono);
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: #0914de;
+  --foreground: #f5f5f5;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -79,6 +79,11 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
   font-family: var(--font-jetbrains-mono), monospace;
 }
@@ -121,7 +126,66 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+section {
+  scroll-margin-top: 6rem;
+}
+
+@media (min-width: 768px) {
+  section {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.animate-slide-right {
+  animation: slide-right 0.5s ease-out;
+}
+
+.animate-slide-left {
+  animation: slide-left 0.5s ease-out;
 }
