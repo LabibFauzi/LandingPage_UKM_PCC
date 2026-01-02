@@ -22,7 +22,11 @@ const jetbrainsMono = localFont({
 export const metadata = {
   title: "LandingPage-UKM-PCC",
   description: "Portal PCC",
-  icons: "/assets/logopcc.png"
+  icons: {
+    icon: "/assets/logopcc.png",
+    shortcut: "/assets/logopcc.png",
+    apple: "/assets/logopcc.png",
+  },
 };
 
 export default function RootLayout({
