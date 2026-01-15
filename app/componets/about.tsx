@@ -5,8 +5,8 @@ import { AboutAccordion } from "../constant";
 export default function About() {
   return (
     <div className="flex lg:flex-row flex-col gap-10">
-      <div className="lg:w-1/2">
-        <h1 className="md:text-4xl xl:text-5xl text-background font-bold leading-relaxed">
+      <div className="lg:w-1/2" data-aos="fade-right">
+        <h1 className="md:text-4xl xl:text-4xl text-background font-bold leading-relaxed">
           A Few Things You <br /> May  Want To Ask
         </h1>
       </div>
@@ -16,6 +16,7 @@ export default function About() {
           collapsible
           defaultValue="item-1"
           className="w-full gap-10 flex flex-col"
+          data-aos="fade-left"
         >
           {AboutAccordion.map((item) => (
             <AccordionItem key={item.id} value={item.id}>

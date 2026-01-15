@@ -33,7 +33,7 @@ export default function Event() {
   return (
     <div className="flex md:flex-row flex-col gap-10 w-full">
       <div className="md:w-1/2 w-full overflow-hidden relative">
-        <div className="relative w-full aspect-4/3 md:aspect-4/4 lg:aspect-4/3 max-h-[400px] md:max-h-[500px]">
+        <div className="relative w-full aspect-4/3 md:aspect-4/4 lg:aspect-4/3 max-h-[400px] md:max-h-[500px]" data-aos="fade-right" >
           <Image
             key={current}
             src={data.image}
@@ -54,12 +54,12 @@ export default function Event() {
               onClick={() => {
                 handleSlide(index, index > current ? "right" : "left");
               }}
-              className={`text-[10px] xl:text-xs ${index === current ? "bg-accent text-black" : ""}`}>
+              className={`text-[10px] xl:text-xs ${index === current ? "bg-accent text-black" : ""}`} data-aos="fade-left">
               /{item.title}
             </Button>
           ))}
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center" data-aos="fade-left">
           <Button
             variant="ghost"
             onClick={prevSlide}

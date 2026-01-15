@@ -1,3 +1,9 @@
+import { ReactNode } from "react";
+import Home from "../componets/Home";
+import About from "../componets/About";
+import Event from "../componets/Event";
+import Gallery from "../componets/Gallery";
+
 export type NavMenuType = {
   id: number;
   title: string;
@@ -116,5 +122,39 @@ export const AboutAccordion: AboutAccordionType[] = [
     title: "Apa Misi dari UKM PCC ?",
     content:
       "Menerapkan 7-Layers PCC dalam diri tiap anggota dalam setiap langkah. Membentuk SDM yang kritis dan inovatif, serta mengembangkan pengetahuan dan portofolio dalam bidang teknologi informasi dan komputer, serta menanamkan jiwa loyalitas dan integritas.",
+  },
+];
+
+export type SectionDataType = {
+  id: string;
+  component: ReactNode;
+  containerClass: string;
+  anchorClass: string;
+}
+
+export const Dashboard_Section: SectionDataType[] = [
+  {
+    id: "home",
+    component: <Home />,
+    containerClass: "p-10 lg:min-h-screen min-h-[300px] flex items-center",
+    anchorClass: "absolute lg:-top-20 -top-16"
+  },
+  {
+    id: "about",
+    component: <About />,
+    containerClass: "bg-white p-10 lg:h-screen min-h-[700px]",
+    anchorClass: "absolute lg:-top-20 -top-16"
+  },
+  {
+    id: "event",
+    component: <Event />,
+    containerClass: "p-10 lg:h-screen h-full flex items-center",
+    anchorClass: "absolute lg:-top-20 -top-14"
+  },
+  {
+    id: "galery",
+    component: <Gallery />,
+    containerClass: "bg-white p-10 min-h-screen h-full flex flex-col justify-center",
+    anchorClass: "absolute lg:-top-20 -top-16"
   },
 ];

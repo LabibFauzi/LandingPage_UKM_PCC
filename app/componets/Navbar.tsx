@@ -19,7 +19,6 @@ export default function Navbar() {
         />
         <p className="text-white">PCC</p>
       </Link>
-
       <div className="hidden md:flex gap-6">
         {NavMenu.map((item) => (
           <Button
@@ -32,7 +31,6 @@ export default function Navbar() {
           </Button>
         ))}
       </div>
-
       <Sheet>
         <SheetTrigger asChild>
           <Button

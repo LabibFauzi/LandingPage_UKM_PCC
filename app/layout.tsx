@@ -1,7 +1,8 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./componets/Navbar";
-import Footer from "./componets/footer";
+import Footer from "./componets/Footer";
+import { AOSProvider } from "./componets/AOSProvider";
 
 const jetbrainsMono = localFont({
   src: [
@@ -37,9 +38,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${jetbrainsMono.variable} antialiased`}>
-        <Navbar />
-        {children}
-        <Footer />
+        <AOSProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </AOSProvider>
       </body>
 
     </html>
