@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { EventCard } from "../constant";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,11 @@ export default function Event() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState<"left" | "right">("right");
   const [isAnimating, setIsAnimating] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const total = EventCard.length;
   const data = EventCard[current];
@@ -54,7 +59,8 @@ export default function Event() {
               onClick={() => {
                 handleSlide(index, index > current ? "right" : "left");
               }}
-              className={`text-[10px] xl:text-xs ${index === current ? "bg-accent text-black" : ""}`} data-aos="fade-left">
+              className={`text-[10px] xl:text-xs ${index === current ? "bg-accent text-black" : ""}`} data-aos={!mounted ? "fade-down" : ""}
+              data-aos-once="true">
               /{item.title}
             </Button>
           ))}
